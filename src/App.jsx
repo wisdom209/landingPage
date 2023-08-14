@@ -21,7 +21,7 @@ function SideItem({ name, translate, icon, active, setActive }) {
 		filter: "invert(9%) sepia(99%) saturate(5630%) hue-rotate(246deg) brightness(111%) contrast(148%)",
 		color: "#563BDB",
 		background: '#EEEBFB',
-		borderLeft: "7px solid #563BDB"
+		borderLeft: "5px solid #563BDB"
 	}
 
 	return (<ListItem disablePadding>
