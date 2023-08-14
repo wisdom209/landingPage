@@ -9,13 +9,15 @@ function SideItem({ name, translate, icon, active, setActive }) {
 		marginRight: '8px',
 		marginLeft: '25px',
 		translate: '0px -2px',
-		borderRadius: '3px'
-	
+		borderRadius: '3px',
+		padding: '3px'
 	}
 	const activeStyle = {
 		marginLeft: '25px',
 		borderRadius: '3px',
+		paddingLeft: '-5px',
 		marginRight: '8px',
+		padding: '3px',
 		filter: "invert(9%) sepia(99%) saturate(5630%) hue-rotate(246deg) brightness(111%) contrast(148%)",
 		color: "#563BDB",
 		background: '#EEEBFB',
@@ -23,7 +25,7 @@ function SideItem({ name, translate, icon, active, setActive }) {
 	}
 
 	return (<ListItem disablePadding>
-		<ListItemButton disableRipple
+		<ListItemButton disableRipple disableGutters disablePadding disableTouchRipple 
 			onClick={() => {
 				setActive(prev => {
 					const newState = {}
