@@ -1,4 +1,4 @@
-import { Stack, Typography, List, ListItem, ListItemButton, ListItemText, Chip, ThemeProvider, Box, createTheme, Stepper, Step, StepLabel, Button } from '@mui/material'
+import { Stack, Typography, List, ListItem, ListItemButton, ListItemText, Chip, ThemeProvider, Box, createTheme, Stepper, Step, StepLabel, Button, Hidden } from '@mui/material'
 import React from 'react'
 import { useState } from 'react'
 import { ReactSVG } from 'react-svg'
@@ -25,7 +25,7 @@ function SideItem({ name, translate, icon, active, setActive }) {
 	}
 
 	return (<ListItem disablePadding>
-		<ListItemButton disableRipple disableGutters disablePadding disableTouchRipple 
+		<ListItemButton disableRipple disableGutters disablePadding disableTouchRipple
 			onClick={() => {
 				setActive(prev => {
 					const newState = {}
@@ -66,35 +66,38 @@ const App = () => {
 		<>
 			<Stack component='section' direction='row' sx={{ width: '100vw', minHeight: '100vh' }}>
 				{/* sidebar */}
-				<Stack width='20%' sx={{ border: '0.1px solid #eee', minHeight: '100vh', paddingLeft: '5px' }} spacing={1}>
-					<Stack>
-						<List sx={{ translate: '0px 0em' }}>
+				<Hidden mdDown>
+					<Stack width='20%' sx={{ border: '0.1px solid #eee', minHeight: '100vh', paddingLeft: '5px' }} spacing={1}>
+						<Stack>
+							<List sx={{ translate: '0px 0em' }}>
 
-							<ListItem>
-								<img src="/coverai--header.png" />
-								<Typography style={{ color: '#3F4E72', fontWeight: '600', marginLeft: '10px', fontSize: '25px' }}>Coverai</Typography>
-							</ListItem>
-						</List>
+								<ListItem>
+									<img src="/coverai--header.png" />
+									<Typography style={{ color: '#3F4E72', fontWeight: '600', marginLeft: '10px', fontSize: '25px' }}>Coverai</Typography>
+								</ListItem>
+							</List>
+						</Stack>
+						<Stack flexGrow={1}>
+							<List>
+								<SideItem name="DashBoard" translate="5px" icon="/home.svg" active={active} setActive={setActive} />
+								<SideItem name="Coverletters" translate="5px" icon="/cover.svg" active={active} setActive={setActive} />
+								<SideItem name="CV/Resume" translate="5px" icon="/cv.svg" active={active} setActive={setActive} />
+								<SideItem name="Interview Prep" translate="5px" icon="/interview.svg" active={active} setActive={setActive} />
+								<SideItem name="Contacts" translate="5px" icon="/contacts.svg" active={active} setActive={setActive} />
+								<SideItem name="Job Tracker" translate="5px" icon="/tracker.svg" active={active} setActive={setActive} />
+							</List>
+						</Stack>
+						<Stack>
+							<List>
+								<SideItem name="Get Extension" translate="5px" icon="/extension.svg" active={active} setActive={setActive} />
+								<SideItem name="Refer & Earn" translate="5px" icon="/refer.svg" active={active} setActive={setActive} />
+								<SideItem name="Help and Support" translate="5px" icon="/help.svg" active={active} setActive={setActive} />
+								<SideItem name="Log out" translate="5px" icon="/logout.svg" active={active} setActive={setActive} />
+							</List>
+						</Stack>
 					</Stack>
-					<Stack flexGrow={1}>
-						<List>
-							<SideItem name="DashBoard" translate="5px" icon="/home.svg" active={active} setActive={setActive} />
-							<SideItem name="Coverletters" translate="5px" icon="/cover.svg" active={active} setActive={setActive} />
-							<SideItem name="CV/Resume" translate="5px" icon="/cv.svg" active={active} setActive={setActive} />
-							<SideItem name="Interview Prep" translate="5px" icon="/interview.svg" active={active} setActive={setActive} />
-							<SideItem name="Contacts" translate="5px" icon="/contacts.svg" active={active} setActive={setActive} />
-							<SideItem name="Job Tracker" translate="5px" icon="/tracker.svg" active={active} setActive={setActive} />
-						</List>
-					</Stack>
-					<Stack>
-						<List>
-							<SideItem name="Get Extension" translate="5px" icon="/extension.svg" active={active} setActive={setActive} />
-							<SideItem name="Refer & Earn" translate="5px" icon="/refer.svg" active={active} setActive={setActive} />
-							<SideItem name="Help and Support" translate="5px" icon="/help.svg" active={active} setActive={setActive} />
-							<SideItem name="Log out" translate="5px" icon="/logout.svg" active={active} setActive={setActive} />
-						</List>
-					</Stack>
-				</Stack>
+				</Hidden>
+
 
 
 				{/* main */}
@@ -138,7 +141,7 @@ const App = () => {
 					{/* intro box */}
 					<Stack sx={{
 						marginTop: '1em',
-						marginLeft: '4em'
+						marginLeft: { sm: '5em', md: '4em' }
 					}} spacing={0}>
 						<Typography fontWeight={600} fontSize='28px'>Hello, Chris!</Typography>
 						<Typography fontSize='14px'>It's time to land your next role, Let's get to it</Typography>
@@ -149,7 +152,7 @@ const App = () => {
 						position: 'absolute',
 						margin: '12em 0px',
 						border: '1px solid #eee',
-						width: '70%',
+						width: { sm: '80%', md: '70%' },
 						height: '60%',
 						alignSelf: 'center',
 
@@ -181,9 +184,9 @@ const App = () => {
 							</Stack>
 						</Stack>
 						<Stack spacing={0} alignSelf='center' alignItems='center' justifyItems='center'
-							style={{ height: '100%', width: '70%', paddingTop: '5em' }}>
+							style={{ height: '100%', width: '90%', paddingTop: '5em' }}>
 							<Stack>
-								<Typography fontWeight={600} fontSize='18px'>Get Familiar with Accountable</Typography>
+								<Typography fontWeight={600} fontSize='18px' textAlign='center'>Get Familiar with Accountable</Typography>
 							</Stack>
 							<Stack px={5} pb={5}>
 								<Typography fontWeight={400} fontSize='14px' textAlign='center'>Let's get you started with accountable through a simple walkthrough guide that explains how it works</Typography>
