@@ -141,7 +141,7 @@ const App = () => {
 					{/* intro box */}
 					<Stack sx={{
 						marginTop: '1em',
-						marginLeft: {xs: '3.3em', sm: '5em', md: '3.5em', lg: '4em' }
+						marginLeft: {xs: '3.5em', sm: '5em', md: '3.5em', lg: '4em' }
 					}} spacing={0}>
 						<Typography fontWeight={600} fontSize='28px'>Hello, Chris!</Typography>
 						<Typography fontSize='14px'>It's time to land your next role, Let's get to it</Typography>
