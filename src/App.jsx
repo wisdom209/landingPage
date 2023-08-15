@@ -184,7 +184,7 @@ const App = () => {
 							</Stack>
 						</Stack>
 						<Stack spacing={0} alignSelf='center' alignItems='center' justifyItems='center'
-							style={{ height: '100%', width: '90%', paddingTop: '5em' }}>
+							style={{ height: '100%', width: '60%', paddingTop: '5em' }}>
 							<Stack>
 								<Typography fontWeight={600} fontSize='18px' textAlign='center'>Get Familiar with Accountable</Typography>
 							</Stack>
